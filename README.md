@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Build a Code Image Generator with Flask, Pygments, and Playwright
 
 Follow the [step-by-step instructions](https://realpython.com/python-code-image-generator/) on Real Python.
@@ -66,3 +67,7 @@ app.secret_key = "2e9ac41b1e0b66a8d93d66400e2300c4b4c2953f"
 ```
 
 To avoid saving the secret key directly in your code, it may be a good idea to work with [environment variables](https://12factor.net/config). You can learn more about that in the Flask documentation on [configuration handling](https://flask.palletsprojects.com/en/2.3.x/config/).
+=======
+# CodeCanvas_With_Python
+A code image generator that creates nice-looking images of your code snippets to share on social media. This tool  will be powered by the Flask web framework and include packages like Pygments and Playwright
+>>>>>>> b0850190d95721947b71911d81fe787eb6697996
