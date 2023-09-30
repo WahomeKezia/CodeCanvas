@@ -9,8 +9,10 @@ A code image generator that creates nice-looking images of your code snippets to
 ---
 ## To run this project : 
 `git clone https://github.com/WahomeKezia/CodeCanvas.git`
-Install the depandicies from the `requirements.txt` alternative install 
+
+Install the depandicies from the `requirements.txt` alternatively install 
 `pip install Flask playwright Pygments`
 
 run `python -m flask run`
+
 
