@@ -1,4 +1,5 @@
 import base64
+import ast
 from flask import (
     Flask,
     redirect,
@@ -11,6 +12,7 @@ from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import Python3Lexer
 from pygments.styles import get_all_styles
+from checkcorrectsyntax import check_syntax
 from utils import take_screenshot_from_url
 
 app = Flask(__name__)
@@ -39,8 +41,19 @@ def code():
 
 @app.route("/save_code", methods=["POST"])
 def save_code():
-    session["code"] = request.form.get("code") or NO_CODE_FALLBACK
-    return redirect(url_for("code"))
+    user_code = request.form.get("code") or NO_CODE_FALLBACK
+    is_syntax_correct, error_message = check_syntax(user_code)
+
+    if is_syntax_correct:
+        session["code"] = user_code
+        return redirect(url_for("code"))
+    else:
+        context = {
+            "message": "Syntax Error",
+            "error_message": error_message,
+            "code": user_code,
+        }
+        return render_template("code_input.html", **context)
 
 
 @app.route("/reset_session", methods=["POST"])
@@ -91,3 +104,7 @@ def image():
         "image_b64": base64.b64encode(image_bytes).decode("utf-8"),
     }
     return render_template("image.html", **context)
+
+# check if code pasted follows python syntax 
+
+

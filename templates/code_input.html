@@ -1,54 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Code Input</title>
-    <style>
-        /* Styles for the floating rectangle tab */
-        .floating-tab {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            padding: 10px;
-            z-index: 1000;
-        }
+{% extends "base.html" %}
 
-        /* Style for the buttons */
-        .controls button {
-            margin-right: 10px;
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
+{% block title %}
+  - Code Input
+{% endblock title %}
 
-        /* Add more styles to buttons as needed */
+{% block content %}
+<style>
+  .code {
+    min-height: calc({{ num_lines }}em * 1.5 + 2 * 1em);
+    min-width: calc({{ max_chars }}ch + 4 * 2em);
+  }
+  
+</style>
+<form>
+  <textarea class="code"
+              name="code"
+              placeholder="Paste your Python code here">{{ code }}</textarea>
+  <div class="controls">
+    <button formmethod="post" formaction="{{ url_for("reset_session") }}">
+      Reset Session ♻️
+    </button>
+    <button formmethod="post" formaction="{{ url_for("save_code") }}">
+      Save Code 💾
+    </button>
+    <button formmethod="post" formaction="{{ url_for("save_style") }}">
 
-    </style>
-</head>
-<body>
-    <div class="floating-tab">
-        <form>
-            <div class="controls">
-                <button formmethod="get" formaction="{{ url_for("reset_session") }}">
-                    Reset Session ♻️
-                </button>
-                <button formmethod="post" formaction="{{ url_for("save_code") }}">
-                    Save Code 💾
-                </button>
-                <button formmethod="post" formaction="{{ url_for("save_style") }}">
-                    Next ➡️
-                </button>
-            </div>
-        </form>
-    </div>
-
-    <!-- Your other HTML content goes here -->
-
-</body>
-</html>
+      Next ➡️
+    </button>
+  </div>
+</form>
+{% endblock content %}
