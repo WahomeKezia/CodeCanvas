@@ -42,6 +42,8 @@ def code():
 @app.route("/save_code", methods=["POST"])
 def save_code():
     user_code = request.form.get("code") or NO_CODE_FALLBACK
+    
+    # Check syntax
     is_syntax_correct, error_message = check_syntax(user_code)
 
     if is_syntax_correct:
@@ -54,6 +56,7 @@ def save_code():
             "code": user_code,
         }
         return render_template("code_input.html", **context)
+
 
 
 @app.route("/reset_session", methods=["POST"])
