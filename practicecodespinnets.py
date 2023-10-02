@@ -1,4 +1,4 @@
-# Testing is playwright in stalled in my computer 
+# Testing if playwright is installed in my computer 
 
 from playwright.sync_api import sync_playwright
 target_url = "https://www.example.com/"
