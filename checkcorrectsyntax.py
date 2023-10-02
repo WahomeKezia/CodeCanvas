@@ -1,9 +1,9 @@
-'''In this app , I will bring in a new feature that checks is the 
-syntax if the codes being pasted 
-by the users are correct since it's only supporting python code'''
+'''
+I will be using Abstract Syntax Trees (ast) library to check is the code pasted by the user has correct
+syntax
+'''
 
-# this is a code snippet that explains the use of  a library ast (Abstract Syntax Trees)
-
+# this is a code snippet of the function using ast
 import ast
 
 
