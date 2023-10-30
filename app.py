@@ -8,6 +8,9 @@ from flask import (
     session,
     url_for,
 )
+import secrets
+import string
+
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import Python3Lexer
@@ -18,23 +21,37 @@ from utils import take_screenshot_from_url
 # You creating an instance of the Flask application
 
 app = Flask(__name__)
-app.secret_key = (
-    "AddYourSecretKeyHere"  # See the README.md file for instructions
-)
+# a function to  generate a secure random secret key for sessions 
+def generate_secret_key():
+    characters = string.ascii_letters + string.digits + string.punctuation
+    return ''.join(secrets.choice(characters) for _ in range(32))
+
+app.secret_key = generate_secret_key()
 # Default Values and Constants
 PLACEHOLDER_CODE = "print('Hello, World!')"
 DEFAULT_STYLE = "monokai"
 NO_CODE_FALLBACK = "# No Code Entered"
 
 # Route Definitions
-
+@app.route("/", methods=["GET"])
+def code():
+    if session.get("code") is None:
+        session["code"] = PLACEHOLDER_CODE
+    lines = session["code"].split("\n")
+    context = {
+        "message": "Paste Your Code here!",
+        "code": session["code"],
+        "num_lines": len(lines),
+        "max_chars": len(max(lines, key=len)),
+    }
+    return render_template("code_input.html", **context)
 
 
 @app.route("/save_code", methods=["POST"])
 def save_code():
     user_code = request.form.get("code") or NO_CODE_FALLBACK
     
-    # Check syntax
+# Check syntax
     is_syntax_correct, error_message = check_syntax(user_code)
 
     if is_syntax_correct:
