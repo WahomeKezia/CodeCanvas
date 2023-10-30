@@ -15,28 +15,19 @@ from pygments.styles import get_all_styles
 from checkcorrectsyntax import check_syntax
 from utils import take_screenshot_from_url
 
+# You creating an instance of the Flask application
+
 app = Flask(__name__)
 app.secret_key = (
     "AddYourSecretKeyHere"  # See the README.md file for instructions
 )
-
+# Default Values and Constants
 PLACEHOLDER_CODE = "print('Hello, World!')"
 DEFAULT_STYLE = "monokai"
 NO_CODE_FALLBACK = "# No Code Entered"
 
+# Route Definitions
 
-@app.route("/", methods=["GET"])
-def code():
-    if session.get("code") is None:
-        session["code"] = PLACEHOLDER_CODE
-    lines = session["code"].split("\n")
-    context = {
-        "message": "Paste Your Code here!",
-        "code": session["code"],
-        "num_lines": len(lines),
-        "max_chars": len(max(lines, key=len)),
-    }
-    return render_template("code_input.html", **context)
 
 
 @app.route("/save_code", methods=["POST"])

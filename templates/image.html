@@ -1,3 +1,4 @@
+<!-- template is extending the base.html template, inheriting its structure -->
 {% extends "base.html" %}
 
 {% block title %}
@@ -6,8 +7,12 @@
 
 {% block content %}
 <form>
+
+  <!-- This condition checks if the image_b64 variable exists -->
   {% if image_b64 %}
+  
     <div class="code-picture">
+      <!-- The img element displays an image encoded in base64 format using the image_b64 variable -->
       <img src="data:image/png;base64,{{ image_b64 | safe }}"
            alt="Code Image" />
     </div>
