@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>
-      <!--  The content within the {% block title %} {% endblock title %} tags is a placeholder that can be overridden in child templates to customize the title -->
-Code Canvas {% block title %}{% endblock title %}
-    </title>
-    <link rel="stylesheet"
-          type="text/css"
-          href="{{ url_for('static', filename='styles.css') }}"/>
-  </head>
-  <body>
-    <h1>
-      <a href="{{ url_for('code') }}">Code to Image</a>: <span>{{ message }}</span>
-    </h1>
+<html>
+<head>
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        
+    <nav>
+      <div class="title">
+        <a href="/">Code Canvas</a>
+    </div>
+        <ul>
+            <li id="contact-me"><a href="https://www.linkedin.com/in/kezia-wahome/">Contact Me</a></li>
+            <li id="view-code"><a href="https://github.com/WahomeKezia/CodeCanvas">View Code</a></li>
+        </ul>
+    </nav>
+  </header>
     <main>
-      {% block content %}
-      {% endblock content %}
+        {% block content %}{% endblock %}
     </main>
-  </body>
+    <footer>
+        &copy; 2023 Code Canvas
+    </footer>
+</body>
 </html>
