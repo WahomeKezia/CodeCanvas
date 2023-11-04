@@ -1,0 +1,15 @@
+/* Reset some default styles */
+body, h1, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Add some spacing to the footer */
+footer {
+    margin-top: 20px;
+    background-color: #f1ecec;
+    color: #221f1f;
+    text-align: center;
+    padding: 10px;
+}

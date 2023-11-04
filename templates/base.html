@@ -2,21 +2,37 @@
 <html>
 <head>
     <title>{% block title %}Default Title{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <header>
-        
-    <nav>
-      <div class="title">
-        <a href="/">Code Canvas</a>
-    </div>
-        <ul>
-            <li id="contact-me"><a href="https://www.linkedin.com/in/kezia-wahome/">Contact Me</a></li>
-            <li id="view-code"><a href="https://github.com/WahomeKezia/CodeCanvas">View Code</a></li>
-        </ul>
-    </nav>
-  </header>
+  <div>
+    <div class="nav-bar">
+      <div class="nav-container">
+          <div class="brand">
+              <a href="#">CodeCanvas</a>
+          </div>
+          <nav>
+              <div class="nav-mobile">
+                  <a href="#" id="nav-toggle">
+                      <span></span>
+                  </a>
+              </div>
+              <ul class="nav-list">
+                <li id="view-code"><a href="https://github.com/WahomeKezia/CodeCanvas">View Code</a></li>
+                <li id="contact-me"><a href="https://www.linkedin.com/in/kezia-wahome/">Contact Me</a></li>
+                
+                <li><a href="#">Portfolio</a></li>
+            </ul>
+          </nav>
+      </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="static/js/script.js"></script>
+
+  </div>
     <main>
         {% block content %}{% endblock %}
     </main>
@@ -25,3 +41,8 @@
     </footer>
 </body>
 </html>
+
+
+
+
+
