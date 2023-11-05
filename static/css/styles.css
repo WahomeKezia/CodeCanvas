@@ -72,12 +72,18 @@ select {
     border: 1px solid #cecece;
     margin: 1em;
     line-height: 1.4em;
+    
 }
 .code:focus {
     border: 1px solid deepskyblue; /* Change the border color and style when focused */
     outline: none; /* Remove the default outline (if you don't want it) */
     box-shadow: 0px 20px 30px -10px deepskyblue; /* Change the box shadow when focused */
+
+/*     
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+*/
 }
+
 /* Add some spacing to the footer */
 
 /* css for style and code image view */
