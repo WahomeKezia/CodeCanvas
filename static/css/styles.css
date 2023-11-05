@@ -79,6 +79,19 @@ select {
     box-shadow: 0px 20px 30px -10px deepskyblue; /* Change the box shadow when focused */
 }
 /* Add some spacing to the footer */
+
+/* css for style and code image view */
+.code-picture {
+    text-align: center;
+}
+
+.code-picture img {
+    margin: 1em 0;
+    border: 1px solid #cecece;
+    max-width: 80%;
+    padding: 1em;
+}
+
 footer {
     margin-top: 20px;
     background-color: #f1ecec;
