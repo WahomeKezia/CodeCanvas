@@ -27,7 +27,8 @@ To avoid any version conflict run the app from a virtual environment,
 - Windows `python -m venv venv` and activate the env with `.\venv\Scripts\activate`
 - Mac and linux  `python -m venv venv`  activate with `source venv/bin/activate`
 
-##Deployed App
+
+## Deployed App
 The app is also available on :https://codecanvas.azurewebsites.net/ 
 
 
