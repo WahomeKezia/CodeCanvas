@@ -1,8 +1,10 @@
 
-# CodeCanvas_With_Python
+# CodeCanvas
+
+## 💡About
 CodeCanvas is code image generator that creates nice-looking images of your code snippets to share on social media. This tool is powered by the Flask web framework and includes packages like Pygments and Playwright
 
-### Technologies Used :
+## 🛠️ Technologies Used :
 ● Python and Flask 
 ● HTML-CSS-JavaScript
 
