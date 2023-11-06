@@ -14,10 +14,13 @@
   }
 </style>
 <form>
+ 
   <textarea
     class="code"
     name="code"
+    id="code-input"
     placeholder="Paste your Python code here"
+    
   >{{ code }}
 </textarea>
 <div class="controls">
@@ -30,8 +33,9 @@
   <button formmethod="post" formaction="{{ url_for('save_style') }}">
     Next ➡️
   </button>
+ 
+
 </div>
 
 </form>
-
 {% endblock content %}
