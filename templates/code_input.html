@@ -18,9 +18,9 @@
   <textarea
     class="code"
     name="code"
+    id="code-input"
     placeholder="Paste your Python code here"
-    rows="10"  
-    cols="80"  
+    
   >{{ code }}
 </textarea>
 <div class="controls">
@@ -33,16 +33,9 @@
   <button formmethod="post" formaction="{{ url_for('save_style') }}">
     Next ➡️
   </button>
+ 
+
 </div>
 
 </form>
-<script>
-  const chatButton = document.getElementById('chat-button');
-  const textArea = document.querySelector('textarea');
-
-  chatButton.addEventListener('click', () => {
-    // Toggle the display of the text area
-    textArea.style.display = textArea.style.display === 'block' ? 'none' : 'block';
-  });
-</script>
 {% endblock content %}

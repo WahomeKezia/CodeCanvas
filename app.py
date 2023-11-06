@@ -5,7 +5,7 @@ from flask import (Flask,
           session,
            redirect,
             request,
-             url_for, )
+             url_for,)
 # adding base64 for images
 import base64
 from utils import take_screenshot_from_url
