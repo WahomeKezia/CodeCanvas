@@ -30,8 +30,6 @@ To avoid any version conflict run the app from a virtual environment,
 - Windows `python -m venv venv` and activate the env with `.\venv\Scripts\activate`
 - Mac and linux  `python -m venv venv`  activate with `source venv/bin/activate`
 
-=======
-
 3. Run `python -m flask run`
 
 This will run the application locally on port 5000
