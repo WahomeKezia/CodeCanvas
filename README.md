@@ -1,5 +1,5 @@
 
-# CodeCanvas
+#![CodeCanvas](https://github.com/WahomeKezia/CodeCanvas/assets/90443938/037d6014-f9b4-4504-9a20-e9ca17131914) CodeCanvas
 
 ## 💡About
 CodeCanvas is code image generator that creates nice-looking images of your code snippets to share on social media. This tool is powered by the Flask web framework and includes packages like Pygments and Playwright
