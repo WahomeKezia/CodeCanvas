@@ -4,6 +4,7 @@
     <title>{% block title %}Default Title{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/theme-switcher.css') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -39,6 +40,17 @@
     <main>
         {% block content %}{% endblock %}
     </main>
+<!--     
+    <div class="switch">
+      <input name="switch" id="one" type="radio" checked/>
+      <label for="one" class="switch__label">One</label>
+      <input name="switch" id="two" type="radio" />
+      <label for="two" class="switch__label">Two</label>
+      <input name="switch" id="three" type="radio" />
+      <label for="three" class="switch__label" >Three</label>
+      <div class="switch__indicator"/></div>
+    </div> -->
+
     <footer>
         &copy; 2023 Code Canvas
     </footer>

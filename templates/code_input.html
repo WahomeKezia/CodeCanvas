@@ -3,7 +3,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-  - Code Input
+  Code Input
 {% endblock title %}
 
 {% block content %}
@@ -13,16 +13,35 @@
     min-width: calc({{ max_chars }}ch + 4 * 2em);
   }
 </style>
+<script>
+  // Auto-resize the textarea based on its content
+  function autoResizeTextarea() {
+    const textarea = document.querySelector("#codeTextarea");
+    textarea.style.height = "auto";
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  }
+
+  // Attach the autoResizeTextarea function to the input event
+  document.addEventListener("DOMContentLoaded", () => {
+    const textarea = document.querySelector("#codeTextarea");
+    textarea.addEventListener("input", autoResizeTextarea);
+  });
+</script>
+
 <form>
- 
   <textarea
+    id="codeTextarea"
     class="code"
     name="code"
     id="code-input"
-    placeholder="Paste your Python code here"
+    placeholder="Paste your code here"
+    rows="10"
+    oninput="autoResizeTextarea()"
     
   >{{ code }}
+  
 </textarea>
+
 <div class="controls">
   <button formmethod="post" formaction="{{ url_for('reset_session') }}">
     Reset Session ♻️
@@ -33,7 +52,6 @@
   <button formmethod="post" formaction="{{ url_for('save_style') }}">
     Next ➡️
   </button>
- 
 
 </div>
 
