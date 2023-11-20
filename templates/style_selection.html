@@ -3,7 +3,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-  - Style Selection
+  Style Selection
 {% endblock title %}
 
 {% block content %}
@@ -17,7 +17,11 @@
 <!-- in line Js to enable auto change of code style -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("select").addEventListener("change", () => {
+    document.querySelector("select[name='style']").addEventListener("change", () => {
+      document.querySelector("form").submit();
+    });
+
+    document.querySelector("select[name='language']").addEventListener("change", () => {
       document.querySelector("form").submit();
     });
   });
@@ -25,17 +29,21 @@
 
 <form method="post" action="{{ url_for('save_style') }}">
   <div class="controls">
+    <label for="language"></label>
+    <select name="language">
+      <option value="python" {% if selected_language == "python" %}selected{% endif %}>Python</option>
+      <option value="java" {% if selected_language == "java" %}selected{% endif %}>Java</option>
+      <option value="HTML" {% if selected_language == "HTML" %}selected{% endif %}>HTML</option>
+      <option value="javascript" {% if selected_language == "javascript" %}selected{% endif %}>javascript</option>
+      <!-- Add more options for other languages -->
+    </select>
+
     <select name="style">
       {% for style_name in all_styles %}
         <option value="{{ style_name }}"
         {% if style_name == style %}selected{% endif %}>{{ style_name }}</option>
       {% endfor %}
     </select>
-
-    <!-- <button formmethod="post" formaction="{{ url_for('save_style') }}">
-      Change Style 
-    </button> -->
-
   </div>
 
   <div class="code">

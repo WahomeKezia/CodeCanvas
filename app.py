@@ -15,6 +15,8 @@ from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import Python3Lexer
 from pygments.styles import get_all_styles
+# to support other languages 
+from pygments.lexers import get_lexer_by_name
 
 
 app = Flask(__name__)
@@ -68,7 +70,11 @@ def style():
 
     if session.get("style") is None:
         session["style"] = DEFAULT_STYLE
-         # Get the "code" from the session or use the placeholder    
+         # Get the "code" from the session or use the placeholder 
+    selected_language = request.args.get("language", "python")  # Default to Python if not specified
+
+    # Get the "code" from the session or use the placeholder
+    lexer = get_lexer_by_name(selected_language)
     formatter = HtmlFormatter(style=session["style"])
     context = {
         "message": "Select Your Style 🎨",
@@ -77,8 +83,9 @@ def style():
         "style_definitions": formatter.get_style_defs(),
         "style_bg_color": formatter.style.background_color,
         "highlighted_code": highlight(
-            session["code"], Python3Lexer(), formatter
-        ),
+            session["code"],lexer, formatter ),
+        "selected_language": selected_language,
+        
     }
     return render_template("style_selection.html", **context)
 
@@ -89,7 +96,8 @@ def save_style():
         session["style"] = request.form.get("style")
     if request.form.get("code") is not None:
         session["code"] = request.form.get("code") or NO_CODE_FALLBACK
-    return redirect(url_for("style"))
+    selected_language = request.form.get("language", "python")  # Default to Python if not specified
+    return redirect(url_for("style" ,language=selected_language))
 
 # creating an image and downloading it view
 @app.route("/image", methods=["GET"])
