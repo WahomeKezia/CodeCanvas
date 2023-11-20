@@ -1,5 +1,7 @@
 /* Reset some default styles */
 /* static/styles.css */
+/* some gradient */
+
 
 * {
     box-sizing: border-box;
@@ -21,6 +23,9 @@ body {
     font-size: 20px;
     line-height: 1.3em;
     background-color: #E1FFFF;
+    position: relative;
+  
+
 }
 
 main {
@@ -31,14 +36,14 @@ main {
 span {
     color: deepskyblue;
 }
-form{ 
+/* form{ 
     margin-top: 1em;
-    /* padding: 20px; 
+    padding: 20px; 
     transition: border-color 0.3s ease-in-out; /* Add a smooth transition effect */
     /* Set the initial border color */
     /* border: 1px solid #cecece; 
-     */ 
-}
+     
+}  */
 
 /* css for buttons and the input form */
 button,
@@ -48,12 +53,13 @@ select {
     margin: 0.25em;
     min-width: 8em;
     border: 1px solid #cecece;
-        top: 10px;
-        right: 10px;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: transform 0.2s;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background-image: -o-linear-gradient();
       }
 
 
@@ -64,6 +70,7 @@ select {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    
 }
 
 .code {
@@ -79,7 +86,9 @@ select {
     border: 1px solid #cecece;
     margin: 1em;
     line-height: 1.4em;
+    
 }
+
 .code:focus {
     border: 1px solid deepskyblue; /* Change the border color and style when focused */
     outline: none; /* Remove the default outline  */
@@ -101,12 +110,14 @@ select {
 }
 
 footer {
-    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-color: #f1ecec;
-    color: #221f1f;
+    margin-top: 10;
     text-align: center;
     padding: 10px;
-    bottom: 10;
 }
 
 /* Add this CSS for the chat button */
@@ -174,3 +185,4 @@ footer {
   #chat-expand-button:hover {
     width: 100px; /* Expands on hover */
   }
+
