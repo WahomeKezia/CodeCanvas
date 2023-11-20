@@ -40,7 +40,7 @@ def code():
         session["code"] = PLACEHOLDER_CODE
     lines = session["code"].split("\n")
     context = {
-        "message": "Paste Your Python Code ",
+        "message": "Paste Your Code here  ",
         "code": session["code"],
         "num_lines": len(lines),
         "max_chars": len(max(lines, key=len)),

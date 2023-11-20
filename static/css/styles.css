@@ -70,7 +70,7 @@ select {
   font-family: monospace;
   box-shadow: #767676 0px 20px 30px -10px;
   border-radius: 0.5em;
-  padding: 1em 2em;
+  padding: 16px 20px;
   min-width: 32em;
   max-width: 100%;
   width: 100%;
@@ -116,70 +116,4 @@ footer {
   text-align: center;
   padding: 10px;
   bottom: 10;
-}
-
-/* Add this CSS for the chat button */
-.chat-container {
-  position: relative;
-}
-
-.chat-button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  /* background-color: #007BFF; */
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.chat-button:hover {
-  transform: scale(1.1);
-}
-
-#chat-expand-button {
-  background-color: #007BFF;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-#chat-expand-button:hover {
-  width: 100px; /* Expands on hover */
-}
-
-#chat-expand-button {
-  background-color: #007BFF;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-#chat-expand-button:hover {
-  width: 100px; /* Expands on hover */
-}
-#chat-expand-button {
-  background-color: #007BFF;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-#chat-expand-button:hover {
-  width: 100px; /* Expands on hover */
 }
