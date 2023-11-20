@@ -51,7 +51,8 @@ def code():
 # adding save code view
 @app.route("/save_code", methods=["POST"])
 def save_code():
-    session["code"] = request.form.get("code") or NO_CODE_FALLBACK
+    code = request.form.get("code")
+    session["code"] = code if code else NO_CODE_FALLBACK
     return redirect(url_for("code"))
 
 # resets the session to default
