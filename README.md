@@ -16,21 +16,20 @@ CodeCanvas is code image generator that creates nice-looking images of your code
 
 To run the Flask App use this commands 
 
-1. Clone the project `git clone https://github.com/WahomeKezia/CodeCanvas.git`
+- Clone the project `git clone https://github.com/WahomeKezia/CodeCanvas.git`
 
-2. Install the depandicies from the `requirements.txt` 
+- Install the depandicies from the `requirements.txt` 
 
    alternatively `pip install Flask playwright Pygments`
 
-3. Run `python -m flask run`
+- Run `python -m flask run`
 
 This will run the application locally on port 5000
 
 To avoid any version conflicts run the app from a virtual environment, 
 - Windows `python -m venv venv` and activate the env with `.\venv\Scripts\activate`
 - Mac and linux  `python -m venv venv`  activate with `source venv/bin/activate`
-
-3. Run `python -m flask run`
+- Run `python -m flask run`
 
 This will run the application locally on port 5000
 
